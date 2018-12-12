@@ -75,7 +75,7 @@ syn_for_one <- function(x, item_pairs) {
   item_pairs_omit_na <- which(!(is.na(x[item_pairs[,1]]) | is.na(x[item_pairs[,2]])))
   sum_item_pairs <- length(item_pairs_omit_na)
 
-  if(sum_item_pairs > 2) {
+  if(sum_item_pairs > 0) {
       itemvalues <- cbind(as.numeric(x[as.numeric(item_pairs[,1])]), as.numeric(x[as.numeric(item_pairs[,2])]))
       synvalue <- suppressWarnings(stats::cor(itemvalues, use = "pairwise.complete.obs", method = "pearson")[1,2])
 
